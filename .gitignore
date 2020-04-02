@@ -1,5 +1,8 @@
 #generated time list
 *.csv
 
-#python tmp files
-src/countingtime
+#json data
+src/counting.json
+
+#pycache
+src/__pycache__
