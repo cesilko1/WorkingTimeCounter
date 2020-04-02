@@ -28,13 +28,16 @@ with open(jsonFileName) as f:
 		sys.exit()
 
 
-if jsonData[argv[1]]["running"] == "True":
+try:
+	if jsonData[argv[1]]["running"] == "True":
 
-	startTime = datetime.strptime(jsonData[argv[1]]["start-time"], '%Y-%m-%d %H:%M:%S.%f')
-	print(startTime.minute)
+		startTime = datetime.strptime(jsonData[argv[1]]["start-time"], '%Y-%m-%d %H:%M:%S.%f')
+		print(startTime.minute)
 
-	with open(jsonData[argv[1]]["csv-path"], "a") as wf:
-		pass
+		with open(jsonData[argv[1]]["csv-path"], "a") as wf:
+			pass
 
-else:
-	print("this job is not running")
+	else:
+		print("this job is not running")
+except:
+	print("error: unstarted job")

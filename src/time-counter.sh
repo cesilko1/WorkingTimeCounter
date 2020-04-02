@@ -8,7 +8,6 @@ case $1 in
 		echo "starting counting time for $2"
 		;;
 	stop)
-		echo "stopping counting time for $2"
 		python3 stop.py $2
 		;;
 	help)
