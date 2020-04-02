@@ -1,5 +1,5 @@
 work time counter
 
-start [session name] [file to save work]
-stop [session name]
+start [session_name] [file_to_save_work]
+stop [session_name]
 help
