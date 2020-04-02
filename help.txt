@@ -1,0 +1,5 @@
+work time counter
+
+start [session name] [file to save work]
+stop [session name]
+help
