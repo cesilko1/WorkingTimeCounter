@@ -1,0 +1,5 @@
+#generated time list
+*.csv
+
+#python tmp files
+src/countingtime
