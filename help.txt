@@ -1,5 +1,6 @@
-work time counter
+timepointer
 
-start [session_name] [file_to_save_work]
-stop [session_name]
-help
+usage:
+timepounter --start [path_to_your_csv]
+timepointer --stop
+timepointer --help

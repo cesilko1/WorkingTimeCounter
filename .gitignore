@@ -1,6 +1,3 @@
-#generated time list
-*.csv
-
 #json data
 src/counting.json
 
