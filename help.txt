@@ -1,6 +1,6 @@
 timepointer
 
 usage:
-timepounter --start [path_to_your_csv]
+timepointer --start [path_to_your_csv]
 timepointer --stop
 timepointer --help
