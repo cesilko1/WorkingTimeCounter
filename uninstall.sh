@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -f /usr/bin/timepointer ]
+if [ -f /usr/bin/timepointer ];
 then
 echo "uninstalling working timepointer"
 

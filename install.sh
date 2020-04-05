@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -f /usr/bin/timepointer ]
+if [ -f /usr/bin/timepointer ];
 then
 	echo "timepointer is aleready installed"
 
@@ -25,7 +25,7 @@ else
 	echo "creating symlink"
 	sudo ln -sv ~/.timepointer/src/timepointer.sh /usr/bin/timepointer
 
-	if [ -f /usr/bin/timepointer ]
+	if [ -f /usr/bin/timepointer ];
 	then
 		echo
 		echo "timepointer has been installed sucessfully"
