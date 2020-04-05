@@ -3,7 +3,7 @@
 import json
 
 
-jsonFileName = "counting.json"
+jsonFileName = "timepointer.json"
 
 with open(jsonFileName) as file:
 	jsonString = file.read()

@@ -10,7 +10,7 @@ import json
 import sys
 
 
-jsonFileName = "counting.json"
+jsonFileName = "timepointer.json"
 
 startTime = str(datetime.now())
 

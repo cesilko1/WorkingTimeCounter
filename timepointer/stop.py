@@ -14,7 +14,7 @@ import time
 import json
 
 
-jsonFileName = "counting.json"
+jsonFileName = "timepointer.json"
 
 stopTime = datetime.now()
 

@@ -3,7 +3,7 @@
 
 csv_path=$PWD/$2
 
-cd ~/.timepointer/src
+cd ~/.timepointer/timepointer
 
 case $1 in
 	--start)
