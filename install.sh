@@ -20,7 +20,7 @@ else
 	touch ~/.timepointer/src/counting.json
 
 	echo "writing data to json file"
-	echo '{ "start-time": "", "csv-dir": "", "status": "stopped" }' >> ~/.timepointer/src/counting.json
+	echo '{ "start-time": "", "csv-path": "", "status": "stopped" }' >> ~/.timepointer/src/counting.json
 
 	echo "creating symlink"
 	sudo ln -sv ~/.timepointer/src/timepointer.sh /usr/bin/timepointer

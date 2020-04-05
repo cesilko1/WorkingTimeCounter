@@ -1,11 +1,13 @@
 #!/bin/bash
 
+csv_path=$PWD/$2
+
 cd ~/.timepointer/src
 
 case $1 in
 	--start)
-		touch $2
-		python3 start.py $2
+		touch $csv_path
+		python3 start.py $csv_path
 		;;
 	--stop)
 		python3 stop.py
