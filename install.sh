@@ -1,34 +1,44 @@
 #!/bin/bash
 
-if [ -f /usr/bin/timepointer ];
+if [ $(whoami) == "root" ];
 then
-	echo "timepointer is aleready installed"
-
-else
-	echo "installing timepointer"
-
-	echo "creating working dir"
-	mkdir ~/.timepointer
-	mkdir ~/.timepointer/src
-
-	echo "copying files"
-	cp -v src/*.py ~/.timepointer/src/
-	cp -v src/timepointer.sh ~/.timepointer/src/
-	cp -v help.txt ~/.timepointer/
-
-	echo "creating json file"
-	touch ~/.timepointer/src/counting.json
-
-	echo "writing data to json file"
-	echo '{ "start-time": "", "csv-path": "", "status": "stopped" }' >> ~/.timepointer/src/counting.json
-
-	echo "creating symlink"
-	sudo ln -sv ~/.timepointer/src/timepointer.sh /usr/bin/timepointer
+	HOME_DIR=$(eval echo ~$SUDO_USER)
 
 	if [ -f /usr/bin/timepointer ];
 	then
-		echo
-		echo "timepointer has been installed sucessfully"
-		echo "for more information type: timepointer --help"
+		echo "timepointer is aleready installed"
+
+	else
+		echo "installing timepointer"
+
+		echo "creating working dir"
+		mkdir $HOME_DIR/.timepointer
+		mkdir $HOME_DIR/.timepointer/src
+
+		echo "copying files"
+		cp -v src/*.py $HOME_DIR/.timepointer/src/
+		cp -v src/timepointer.sh $HOME_DIR/.timepointer/src/
+		cp -v help.txt $HOME_DIR/.timepointer/
+
+		echo "creating json file"
+		touch $HOME_DIR/.timepointer/src/counting.json
+
+		echo "writing data to json file"
+		echo '{ "start-time": "", "csv-path": "", "status": "stopped" }' >> $HOME_DIR/.timepointer/src/counting.json
+
+		echo "creating symlink"
+		ln -sv $HOME_DIR/.timepointer/src/timepointer.sh /usr/bin/timepointer
+
+		echo "setting permissions"
+		chown -Rv $SUDO_USER $HOME_DIR/.timepointer
+
+		if [ -f /usr/bin/timepointer ];
+		then
+			echo
+			echo "timepointer has been installed sucessfully"
+			echo "for more information type: timepointer --help"
+		fi
 	fi
+else
+	echo "please run this script with sudo"
 fi

@@ -1,18 +1,24 @@
 #!/bin/bash
 
+
 csv_path=$PWD/$2
 
 cd ~/.timepointer/src
 
 case $1 in
 	--start)
-		if [ -f $csv_path ];
+		if [ $# == 2 ];
 		then
-			python3 start.py $csv_path
+			if [ -f $csv_path ];
+			then
+				python3 start.py $csv_path
+			else
+				touch $csv_path
+				echo 'date,start,stop' >> $csv_path
+				python3 start.py $csv_path
+			fi
 		else
-			touch $csv_path
-			echo 'date,start,stop' >> $csv_path
-			python3 start.py $csv_path
+			echo "please specify csv file"
 		fi
 		;;
 	--stop)

@@ -11,7 +11,7 @@ with open(jsonFileName) as file:
 	try:
 		jsonData = json.loads(jsonString)
 		print("Status of timepointer: "+jsonData["status"])
-		print("dir to csv file: "+jsonData["csv-path"])
+		print("csv file: "+jsonData["csv-path"])
 
 	except:
 		print("Error while reading json file")

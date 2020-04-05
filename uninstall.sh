@@ -1,16 +1,23 @@
 #!/bin/bash
 
-if [ -f /usr/bin/timepointer ];
+if [ $(whoami) == "root" ];
 then
-echo "uninstalling working timepointer"
+	HOME_DIR=$(eval echo ~$SUDO_USER)
 
-echo "removing command file"
-sudo rm -fv /usr/bin/timepointer
+	if [ -f /usr/bin/timepointer ];
+	then
+		echo "uninstalling working timepointer"
 
-echo "clearing working directory"
-rm -rfv ~/.timepointer
+		echo "removing command file"
+		rm -fv /usr/bin/timepointer
 
-echo "timepointer has been uninstalled"
+		echo "clearing working directory"
+		rm -rfv $HOME_DIR/.timepointer
+
+		echo "timepointer has been uninstalled"
+	else
+		echo "timepointer is not installed yet"
+	fi
 else
-echo "timepointer is not installed yet"
+	echo "please run this script with sudo"
 fi
