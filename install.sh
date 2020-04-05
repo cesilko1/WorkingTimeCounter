@@ -21,7 +21,7 @@ then
 		cp -v help.txt $HOME_DIR/.timepointer/
 
 		echo "creating json file"
-		touch $HOME_DIR/.timepointer/timepointer/counting.json
+		touch $HOME_DIR/.timepointer/timepointer/timepointer.json
 
 		echo "writing data to json file"
 		echo '{ "start-time": "", "csv-path": "", "status": "stopped" }' >> $HOME_DIR/.timepointer/timepointer/timepointer.json
