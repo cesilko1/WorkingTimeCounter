@@ -1,17 +1,32 @@
 # TimePointer
 
+v 1.0.0
+
+You can use tis application to save start time and stop time into given csv file.
+
+---
+
 ### Installing
 
-you should have installed python3
+1. Download .zip or clone this repository
 
-**install**
-```
-sudo apt-get install python3-dateutil
+2. Run the installation script `sudo ./install.sh`
 
-sudo ./install.sh
-```
+---
 
-**uninstall**
-```
-sudo ./uninstall.sh
+### Using
+
+```bash
+xxx@yyy:~$ timepointer --start timepoints.csv
+start timepoint
+xxx@yyy:~$
+
+xxx@yyy:~$ timepointer --status
+Status of timepointer: stopped
+csv file: /home/xxx/timepoints.csv
+xxx@yyy:~$
+
+xxx@yyy:~$ timepointer --stop
+stopped: 10:15
+xxx@yyy:~$
 ```

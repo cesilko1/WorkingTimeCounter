@@ -23,7 +23,7 @@ def roundMinute(time):
 
 jsonFileName = "timepointer.json"
 
-stopTime = datetime(2020, 4, 6, 10, 56)
+stopTime = datetime.now()
 
 
 with open(jsonFileName) as f:
