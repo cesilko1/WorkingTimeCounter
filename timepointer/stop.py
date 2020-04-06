@@ -1,22 +1,29 @@
 #!/usr/bin/python3
 
 '''
-stops the counting time
+
 '''
 
-
-from datetime import timedelta
 from datetime import datetime
-from dateutil.parser import parse
-from sys import argv
-import sys
-import time
 import json
+
+
+def roundMinute(time):
+	roundedMinutes = round(time.minute / 15) * 15
+
+	if roundedMinutes == 60:
+		roundedMinutes = 0
+		returnTime = datetime(time.year, time.month, time.day, time.hour+1, roundedMinutes)
+	else:
+		returnTime = datetime(time.year, time.month, time.day, time.hour, roundedMinutes)	
+
+	return returnTime
+
 
 
 jsonFileName = "timepointer.json"
 
-stopTime = datetime.now()
+stopTime = datetime(2020, 4, 6, 10, 56)
 
 
 with open(jsonFileName) as f:
@@ -28,13 +35,13 @@ with open(jsonFileName) as f:
 		sys.exit()
 
 
-startTime = datetime.now()
+startTime = datetime.strptime(jsonData["start-time"], '%Y-%m-%d %H:%M:%S.%f')
 
 with open(jsonData["csv-path"], "a") as csv:
 	csv.write(str(stopTime.day)+". "+str(stopTime.month)+". "+str(stopTime.year)+",")
-	csv.write(str(startTime.hour)+":"+str(startTime.minute)+",")
-	csv.write(str(stopTime.hour)+":"+str(stopTime.minute)+"\n")
-	print("stop timepoint")
+	csv.write(str(roundMinute(startTime).hour)+":"+str(roundMinute(startTime).minute)+",")
+	csv.write(str(roundMinute(stopTime).hour)+":"+str(roundMinute(stopTime).minute)+"\n")
+	print("stopped: "+str(roundMinute(stopTime).hour)+":"+str(roundMinute(stopTime).minute))
 
 with open(jsonFileName, "w") as f:
 	jsonData["status"] = "stopped"
