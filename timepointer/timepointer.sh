@@ -37,7 +37,11 @@ case $1 in
 		;;
 
 	stop)
-		python3 stop.py
+		if [ $# == 2 ]
+		then
+			python3 stop.py $2
+		else
+			python3 stop.py
 		;;
 
 	status)

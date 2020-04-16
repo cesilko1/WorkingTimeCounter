@@ -13,10 +13,25 @@ from sys import argv
 import sys
 import json
 
+
+
+def roundMinute(time):
+	roundedMinutes = round(time.minute / 15) * 15
+
+	if roundedMinutes == 60:
+		roundedMinutes = 0
+		returnTime = datetime(time.year, time.month, time.day, time.hour+1, roundedMinutes)
+	else:
+		returnTime = datetime(time.year, time.month, time.day, time.hour, roundedMinutes)	
+
+	return returnTime
+
+
+
 #name of file where to save datetime and csv path.
 jsonFileName = "timepointer.json"
 
-startTime = str(datetime.now())
+startTime = datetime.now()
 
 csvPath = argv[1]
 
@@ -37,10 +52,10 @@ if jsonData["status"] == "pointed":
 	sys.exit()
 
 elif jsonData["status"] == "free":
-	jsonData["start-time"] = startTime
+	jsonData["start-time"] = str(startTime)
 	jsonData["csv-path"] = csvPath
 	jsonData["status"] = "pointed"
-	print("timepoint into: "+str(csvPath))
+	print("start timepoint for: "+str(roundMinute(startTime).hour)+":"+str(roundMinute(startTime).minute))
 
 
 with open(jsonFileName, "w") as f:

@@ -58,7 +58,7 @@ with open(jsonData["csv-path"], "a") as csv:
 	except:
 		csv.write(",\n")
 
-	print("end for: "+str(roundMinute(stopTime).hour)+":"+str(roundMinute(stopTime).minute))
+	print("end timepoint for: "+str(roundMinute(stopTime).hour)+":"+str(roundMinute(stopTime).minute))
 
 
 with open(jsonFileName, "w") as f:
