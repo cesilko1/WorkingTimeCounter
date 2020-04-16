@@ -1,9 +1,18 @@
 #!/bin/bash
 
+#Script for installing timepointer into Ubuntu based system.
+#
+#Created by Vilém Raška.
+#This script is released under MIT License.
+#==========================================
+
+#check if the script has root privileges
 if [ $(whoami) == "root" ];
 then
+	#set home directory for installation
 	HOME_DIR=$(eval echo ~$SUDO_USER)
 
+	#check if the timepointer is already installed
 	if [ -f /usr/bin/timepointer ];
 	then
 		echo "timepointer is aleready installed"
@@ -31,10 +40,11 @@ then
 		echo "setting permissions"
 		chown -Rv $SUDO_USER $HOME_DIR/.timepointer
 
+		#check if the timepointer is installed successfully
 		if [ -f /usr/bin/timepointer ];
 		then
 			echo
-			echo "timepointer has been installed sucessfully"
+			echo "timepointer has been installed successfully"
 			echo "for more information type: timepointer --help"
 		fi
 	fi

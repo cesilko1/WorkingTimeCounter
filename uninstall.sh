@@ -1,9 +1,19 @@
 #!/bin/bash
 
+#Script for uninstalling timepointer from your Debian based system.
+#
+#Created by Vilém Raška.
+#This script is released under MIT License.
+#==========================================
+
+
+#check if the script has root privileges
 if [ $(whoami) == "root" ];
 then
+	#set home directory where should be timepointer installed
 	HOME_DIR=$(eval echo ~$SUDO_USER)
 
+	#check if the timepointer is installed in this system
 	if [ -f /usr/bin/timepointer ];
 	then
 		echo "uninstalling working timepointer"

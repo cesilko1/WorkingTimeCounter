@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 
 '''
-start counting time
+This short script saves current time and given path to csv into json.
+
+Created by Vilém Raška.
+Released under MIT License.
 '''
 
 from datetime import datetime
@@ -9,7 +12,7 @@ from sys import argv
 import json
 import sys
 
-
+#name of file where to save datetime and csv path.
 jsonFileName = "timepointer.json"
 
 startTime = str(datetime.now())
@@ -31,6 +34,7 @@ with open(jsonFileName) as f:
 if jsonData["status"] == "running":
 	print("this job is already running!")
 	sys.exit()
+
 elif jsonData["status"] == "stopped":
 	jsonData["start-time"] = startTime
 	jsonData["csv-path"] = csvPath
