@@ -1,6 +1,6 @@
 # TimePointer
 
-v 1.1.0
+v 1.2.0
 
 You can use tis application to save start time and stop time into given csv file.
 
@@ -17,16 +17,18 @@ You can use tis application to save start time and stop time into given csv file
 ### Using
 
 ```
-xxx@yyy:~$ timepointer start timepoints.csv
-start timepoint
-xxx@yyy:~$
+cesilko1@PCc:~$ timepointer start timepoints.csv
+start timepoint for: 10:0
+cesilko1@PCc:~$
 
-xxx@yyy:~$ timepointer status
-Status of timepointer: stopped
-csv file: /home/xxx/timepoints.csv
-xxx@yyy:~$
+cesilko1@PCc:~$ timepointer status
+Status of timepointer: free
+csv file: /home/cesilko1/timepoints.csv
+cesilko1@PCc:~$
 
-xxx@yyy:~$ timepointer stop
-stopped: 10:15
-xxx@yyy:~$
+cesilko1@PCc:~$ timepointer stop your note
+end timepoint for: 10:15
+cesilko1@PCc:~$
 ```
+
+for help, just type `timepointer help`

@@ -52,7 +52,7 @@ startTime = datetime.strptime(jsonData["start-time"], '%Y-%m-%d %H:%M:%S.%f')
 with open(jsonData["csv-path"], "a") as csv:
 	csv.write(str(stopTime.day)+". "+str(stopTime.month)+". "+str(stopTime.year)+",")
 	csv.write(str(roundMinute(startTime).hour)+":"+str(roundMinute(startTime).minute)+",")
-	csv.write(str(roundMinute(stopTime).hour)+":"+str(roundMinute(stopTime).minute)+"\n")
+	csv.write(str(roundMinute(stopTime).hour)+":"+str(roundMinute(stopTime).minute))
 	try:
 		csv.write(","+argv[1]+"\n")
 	except:

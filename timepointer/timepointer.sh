@@ -37,11 +37,22 @@ case $1 in
 		;;
 
 	stop)
-		if [ $# == 2 ]
+		#check if the count of arguments ig higher than 1
+		if [ $# > 1 ]
 		then
-			python3 stop.py $2
+			msg=""
+
+			#put all arguments into string divided by space
+			while test $# -gt 0
+			do
+				msg+=" $1"
+				shift
+			done
+			
+			python3 stop.py "${msg:6}"
 		else
 			python3 stop.py
+		fi
 		;;
 
 	status)

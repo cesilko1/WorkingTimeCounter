@@ -1,8 +1,12 @@
+TimePointer v1.2.0
+Released under MIT license.
+
 usage:
-  timepointer [command] [option]
+    timepointer [command]
 
 available commands:
-  timepointer start [csv file name]
-  timepointer stop
-  timepointer status
-  timepointer help
+    start [file.csv]
+    stop
+    stop [stop note](optioaly)
+    status
+    help
