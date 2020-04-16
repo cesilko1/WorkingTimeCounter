@@ -3,8 +3,9 @@
 '''
 Script for showing status of timepointer.
 
-Created by Vilém Raška.
+Created by Vilém Raška 2020.
 Released under MIT License.
+===========================
 '''
 
 import json

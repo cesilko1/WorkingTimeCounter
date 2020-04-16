@@ -3,14 +3,15 @@
 '''
 This short script saves current time and given path to csv into json.
 
-Created by Vilém Raška.
+Created by Vilém Raška 2020.
 Released under MIT License.
+===========================
 '''
 
 from datetime import datetime
 from sys import argv
-import json
 import sys
+import json
 
 #name of file where to save datetime and csv path.
 jsonFileName = "timepointer.json"
@@ -32,14 +33,14 @@ with open(jsonFileName) as f:
 
 
 if jsonData["status"] == "pointed":
-	print("this job is already running!")
+	print("timepointer is already pointed!")
 	sys.exit()
 
 elif jsonData["status"] == "free":
 	jsonData["start-time"] = startTime
 	jsonData["csv-path"] = csvPath
 	jsonData["status"] = "pointed"
-	print("start timepoint")
+	print("timepoint into: "+str(csvPath))
 
 
 with open(jsonFileName, "w") as f:

@@ -2,7 +2,7 @@
 
 #Script for installing timepointer into Ubuntu based system.
 #
-#Created by Vilém Raška.
+#Created by Vilém Raška 2020.
 #This script is released under MIT License.
 #==========================================
 
