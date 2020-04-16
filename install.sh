@@ -32,7 +32,7 @@ then
 		touch $HOME_DIR/.timepointer/timepointer.json
 
 		echo "writing data to json file"
-		echo '{ "start-time": "", "csv-path": "", "status": "stopped" }' >> $HOME_DIR/.timepointer/timepointer.json
+		echo '{ "start-time": "", "csv-path": "", "status": "free" }' >> $HOME_DIR/.timepointer/timepointer.json
 
 		echo "creating symlink"
 		ln -sv $HOME_DIR/.timepointer/timepointer.sh /usr/bin/timepointer

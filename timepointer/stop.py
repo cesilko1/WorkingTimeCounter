@@ -5,6 +5,7 @@
 '''
 
 from datetime import datetime
+import sys
 import json
 
 
@@ -34,6 +35,11 @@ with open(jsonFileName) as f:
 		print("error while loading json file!")
 		sys.exit()
 
+if jsonData["status"] == "free":
+	print("timepointer is free")
+	print("first type: timepointer start [csv file name]")
+	sys.exit()
+
 
 startTime = datetime.strptime(jsonData["start-time"], '%Y-%m-%d %H:%M:%S.%f')
 
@@ -44,6 +50,6 @@ with open(jsonData["csv-path"], "a") as csv:
 	print("stopped: "+str(roundMinute(stopTime).hour)+":"+str(roundMinute(stopTime).minute))
 
 with open(jsonFileName, "w") as f:
-	jsonData["status"] = "stopped"
+	jsonData["status"] = "free"
 	newJsonString = json.dumps(jsonData)
 	f.write(newJsonString)

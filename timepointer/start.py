@@ -31,14 +31,14 @@ with open(jsonFileName) as f:
 		sys.exit()
 
 
-if jsonData["status"] == "running":
+if jsonData["status"] == "pointed":
 	print("this job is already running!")
 	sys.exit()
 
-elif jsonData["status"] == "stopped":
+elif jsonData["status"] == "free":
 	jsonData["start-time"] = startTime
 	jsonData["csv-path"] = csvPath
-	jsonData["status"] = "running"
+	jsonData["status"] = "pointed"
 	print("start timepoint")
 
 

@@ -2,7 +2,7 @@ usage:
   timepointer [command] [option]
 
 available commands:
-  timepointer start [path_to_your_csv]
+  timepointer start [csv file name]
   timepointer stop
   timepointer status
   timepointer help

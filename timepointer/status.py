@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 
 '''
+Script for showing status of timepointer.
 
+Created by Vilém Raška.
+Released under MIT License.
 '''
 
 import json
