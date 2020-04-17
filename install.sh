@@ -45,7 +45,7 @@ then
 		then
 			echo
 			echo "timepointer has been installed successfully"
-			echo "for more information type: timepointer --help"
+			echo "for more information type: timepointer help"
 		fi
 	fi
 else
