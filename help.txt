@@ -7,6 +7,6 @@ usage:
 available commands:
     start [file.csv]
     stop
-    stop [stop note](optioaly)
+    stop [stop note](optionally)
     status
     help
